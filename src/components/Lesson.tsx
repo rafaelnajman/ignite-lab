@@ -2,6 +2,8 @@ import { CheckCircle, Lock } from "phosphor-react";
 
 import { isPast, format } from "date-fns";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { NavContext } from "../Context";
 
 interface LessonProps {
   title: string;
@@ -16,6 +18,7 @@ export function Lesson(props: LessonProps) {
     props.availableAt,
     "EEEE' • 'd MMMM' • 'k'h'mm "
   );
+  const { isNavOpen, setIsNavOpen } = useContext(NavContext);
 
   return (
     <Link to={`/event/lesson/${props.slug}`} className="group">

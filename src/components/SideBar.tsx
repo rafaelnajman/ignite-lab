@@ -1,4 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
+import { useContext } from "react";
+import { NavContext } from "../Context";
 import { Lesson } from "./Lesson";
 
 const GET_LESSONS_QUERY = gql`
@@ -25,26 +27,35 @@ interface GetLessonsQueryResponse {
 
 export function SideBar() {
   const { data } = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY);
+  const { isNavOpen } = useContext(NavContext);
 
   return (
-    <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600">
-      <span className="font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block">
-        Cronograma de aulas
-      </span>
+    <div className="bg-gray-700 flex justify-center min-h-screen">
+      <aside
+        className={
+          isNavOpen
+            ? "w-[348px] bg-gray-700 p-6 xl:border-l xl:border-gray-600 xl:block  "
+            : "w-[348px] bg-gray-700 p-6 xl:border-l xl:border-gray-600 hidden xl:block"
+        }
+      >
+        <span className="font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block">
+          Cronograma de aulas
+        </span>
 
-      <div className="flex flex-col gap-8">
-        {data?.lessons.map((lesson) => {
-          return (
-            <Lesson
-              key={lesson.id}
-              title={lesson.title}
-              slug={lesson.slug}
-              availableAt={new Date(lesson.availableAt)}
-              type={lesson.lessonType}
-            />
-          );
-        })}
-      </div>
-    </aside>
+        <div className="flex flex-col gap-8">
+          {data?.lessons.map((lesson) => {
+            return (
+              <Lesson
+                key={lesson.id}
+                title={lesson.title}
+                slug={lesson.slug}
+                availableAt={new Date(lesson.availableAt)}
+                type={lesson.lessonType}
+              />
+            );
+          })}
+        </div>
+      </aside>
+    </div>
   );
 }

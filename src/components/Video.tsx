@@ -70,7 +70,7 @@ export function Video(props: VideoProps) {
       {/* bottom of video */}
       <div className="p-8 max-w-[1100px] mx-auto ">
         {/* video informations */}
-        <div className="flex items-start gap-16">
+        <div className="flex flex-col items-center gap-16 xl:flex-row xl:items-start">
           {/* video description */}
           <div className="flex-1">
             <h1 className="text-2xl font-bold">{data.lesson.title}</h1>
@@ -95,7 +95,7 @@ export function Video(props: VideoProps) {
             </div>
           </div>
           {/* 2 buttons in right */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 w-full max-w-[800px] xl:w-fit">
             <a
               href="#"
               className="p-4 text-sm bg-green-500 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-green-700 transition-colors"
@@ -114,10 +114,10 @@ export function Video(props: VideoProps) {
           </div>
         </div>
         {/* start of links to materials */}
-        <div className="gap-8 mt-20 grid grid-cols-2">
+        <div className="gap-8 mt-20 grid grid-rows-2 xl:grid-cols-2">
           <a
             href="#"
-            className="bg-gray-700 rounder overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+            className="bg-gray-700 rounder overflow-hidden flex items-stretch justify-between gap-6 hover:bg-gray-600 transition-colors"
           >
             <div className="bg-green-700 h-full p-6 flex items-center">
               <FileArrowDown size={40} />
@@ -129,13 +129,13 @@ export function Video(props: VideoProps) {
                 desenvolvimento
               </p>
             </div>
-            <div className="h-full p-6 flex items-center">
+            <div className="h-full py-6 pr-6 flex items-center">
               <CaretRight size={24} className="text-blue-500" />
             </div>
           </a>
           <a
             href="#"
-            className="bg-gray-700 rounder overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
+            className="bg-gray-700 rounder overflow-hidden flex items-stretch justify-between gap-6 hover:bg-gray-600 transition-colors"
           >
             <div className="bg-green-700 h-full p-6 flex items-center">
               <Image size={40} />
