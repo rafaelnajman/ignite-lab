@@ -1,6 +1,6 @@
 ## 💻 Project
 
-- Ignite-lab event made by RockeatSeat team
+- Ignite-lab event made by RocketSeat team
 - it is a website for hosting events/courses 
 
 
