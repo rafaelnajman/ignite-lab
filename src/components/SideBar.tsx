@@ -32,11 +32,9 @@ export function SideBar() {
   return (
     <div className="bg-gray-700 flex justify-center min-h-screen">
       <aside
-        className={
-          isNavOpen
-            ? "w-[348px] bg-gray-700 p-6 xl:border-l xl:border-gray-600 xl:block  "
-            : "w-[348px] bg-gray-700 p-6 xl:border-l xl:border-gray-600 hidden xl:block"
-        }
+        className={`w-[348px] bg-gray-700 p-6 xl:border-l xl:border-gray-600 xl:block ${
+          isNavOpen ? "" : "hidden"
+        }`}
       >
         <span className="font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block">
           Cronograma de aulas
