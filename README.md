@@ -21,3 +21,6 @@ This project has developed with:
 - [GraphQL](https://graphql.org/)
 - [Phosphor](https://phosphoricons.com/)
 - [VimeJS](https://vimejs.com/)
+
+## Deployed on Vercel
+- https://ignite-lab-mu.vercel.app/
