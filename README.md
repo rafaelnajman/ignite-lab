@@ -2,6 +2,7 @@
 
 - Ignite-lab event made by RocketSeat team
 - it is a website for hosting events/courses 
+-Beside the course, i added some more functionalities like responsiveness
 
 
 ## 🧪 Techs
